@@ -12,7 +12,7 @@ module.exports = {
         }
     },
     dest: './docs',
-    base: '/docs/',
+    base: '/StarNight-Engine-Doc/',
     extraWatchFiles: [],
     // theme: '@vuepress-theme-default', // 主题
     themeConfig: {

@@ -917,5 +917,3 @@ MigrationBackup/
 
 node_modules/
 /dist/
-
-.temp/

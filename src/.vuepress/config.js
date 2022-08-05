@@ -11,7 +11,7 @@ module.exports = {
             description: ''
         }
     },
-    dest: './dist',
+    dest: './docs',
     extraWatchFiles: [],
     // theme: '@vuepress-theme-default', // 主题
     themeConfig: {

@@ -1,0 +1,20 @@
+{
+    "name": "test",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "serve": "vuepress dev docs --temp .temp",
+        "build": "vuepress build docs"
+    },
+    "author": "",
+    "license": "",
+    "keywords": [],
+    "description": "基于[vuepress 1.x](https://v1.vuepress.vuejs.org/zh/)文档系统，以 makrdown 格式编写项目文档，支持多语言。",
+    "directories": {
+        "doc": "docs"
+    },
+    "dependencies": {
+        "vuepress": "^1.9.7"
+    }
+}

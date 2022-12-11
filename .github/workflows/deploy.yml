@@ -1,0 +1,19 @@
+name: Deploy Docs
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build and Deploy
+        uses: jenkey2011/vuepress-deploy@master
+        env:
+          ACCESS_TOKEN: ${{ github.token  }}
+          TARGET_BRANCH: doc
+          BUILD_SCRIPT: npm i && npm run build
+          BUILD_DIR: docs

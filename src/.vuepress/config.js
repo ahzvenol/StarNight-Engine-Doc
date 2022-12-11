@@ -16,8 +16,8 @@ module.exports = {
     extraWatchFiles: [],
     // theme: '@vuepress-theme-default', // 主题
     themeConfig: {
-        search: false, // 警用默认的搜索框
-        nextLinks: true, // 上/先一篇链接
+        search: false, // 禁用默认的搜索框
+        nextLinks: true, // 显示上一篇链接
         prevLinks: true,
         // sidebar: 'auto', // 自动显示
         // sidebar: [ // 全部显示
@@ -31,6 +31,7 @@ module.exports = {
                 { title: '基础 · 编写剧本', path: '/guide/script' },
                 { title: '基础 · 基本配置', path: '/guide/config' },
                 { title: '进阶 · 优化访问', path: '/guide/assetzip' },
+                { title: '发布我的游戏', path: '/guide/release' },
                 { title: '常见问题', path: '/guide/problem' },
             ],
             '/extend/': [

@@ -5,7 +5,7 @@
 ### 编写一个简单的命令脚本
 首先,找到`userData`文件夹中的`command.js`并打开它<br/>
 随意定义一个变量并编写命令,这里使用了**对象解构**语法,接收一个object,并将它的`t`键的value提取出来,赋值给`text`<br/>
-myCommend是为了更好的了解命令的功能而定义的函数名,但是要注意的是,由于需要使用`this`访问引擎的内部变量,不能使用匿名函数
+myCommend是为了更好的了解命令的功能而定义的函数名,但是要注意的是,由于需要使用`this`访问引擎的内部变量,不能使用匿名(箭头)函数
 ```js
 let mc = function myCommend({t:text}) {
   console.log(text);

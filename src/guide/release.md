@@ -12,23 +12,24 @@
 以上操作因为服务商的不同,对应的名称可能不同,但不会差太多<br/>
 之后,你需要一款软件以连接到服务器,推荐[Xshell](https://www.baidu.com/s?ie=UTF-8&wd=Xshell),接下来以Xshell举例<br/>
 安装好Xshell后,选择左上角的文件->新建,在`主机`输入框中输入`IP地址`,点击`用户身份验证`,在`用户名`输入框中输入`管理员账号`,在`密码`输入框中输入`管理密码`<br/>
-点击确定,此时在软件的左边栏应该已经出现了`新建会话`,双击,这时可能会弹出窗口,选择`接受并保存`,标签页的指示灯变为绿色,服务器连接成功<br/>
+点击确定,此时在软件的左边栏应该已经出现了`新建会话`,双击,这时可能会弹出窗口,选择`接受并保存`,左上角标签页的指示灯变为绿色,服务器连接成功<br/>
 如果没有出现`新建会话`,可以关闭软件再重新打开试试能否解决<br/>
 接下来可以选择通过第三方图形化软件或者通过星夜引擎提供的服务端两种方式<br/>
 两种方式都需要在XShell中输入命令,你可以选择`右键->粘贴`的方式或者使用快捷键`Shift+Insert`
 ### 通过第三方软件
 教程以宝塔面板举例<br/>
-首先,安装宝塔面板,回退到广告较少的7.7版本并移除登录验证<br/>
+首先,安装宝塔面板7.7版本并移除登录验证<br/>
 (如果你发现输入以下命令后还需要登录或出现问题,请[联系我们](#交流与反馈))<br/>
-复制并粘贴以下命令到XShell即可
+复制并粘贴以下命令到XShell即可,如果在控制台上看到让你选择的情况(语句结尾处有`(y/n)`),输入`y`并按下`Enter`键
 ```shell
-yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh ed8484bec
-wget http://download.bt.cn/install/update/LinuxPanel-7.7.0.zip
-unzip LinuxPanel-7.7.0.zip
-cd panel
-bash update.sh
-cd .. && rm -f LinuxPanel-7.7.0.zip && rm -rf panel
-rm -f /www/server/panel/data/bind.pl
+wget -O install.sh http://www.qfya.com/wp-qing/bt/install_6.0.sh && bash install.sh
+sed -i "s|bind_user == 'True'|bind_user == 'XXXX'|" /www/server/panel/BTPanel/static/js/index.js
+```
+如果遇到控制台不断输出`rm -f /var/run/yum.pid`的情况,关闭这个标签页,再重新双击`新建会话`打开一个新标签页<br/>
+之后先运行以下命令,再重新运行上面的命令即可
+```shell
+rm -f /var/run/yum.pid
+/sbin/service yum-updatesd restart
 ```
 等待宝塔面板安装完毕后,你可以在控制台找到以下内容
 ```js

@@ -39,7 +39,7 @@ module.exports = {
                 { title: '编写UI', path: '/extend/ui' },
             ],
             '/info/': [
-                { title: '开发日志', path: '/info/fix' },
+                { title: '开发日志', path: '/info/log' },
                 { title: '更新计划', path: '/info/todo' },
             ]
         },

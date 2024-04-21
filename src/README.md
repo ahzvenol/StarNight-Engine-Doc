@@ -2,7 +2,7 @@
 home: true
 heroImage: /favicon.png
 heroText: 星夜引擎
-tagline: 致力于简单/易用/高效的Web跨平台GalGame引擎
+tagline: 致力于简单/统一/自由的Web跨平台GalGame引擎
 actionText: 立刻上手 →
 actionLink: /guide/
 features:

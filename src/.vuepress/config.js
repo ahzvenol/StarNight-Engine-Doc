@@ -39,8 +39,8 @@ module.exports = {
                 { title: '编写UI', path: '/extend/ui' },
             ],
             '/info/': [
+                { title: '开发计划', path: '/info/todo' },
                 { title: '开发日志', path: '/info/log' },
-                { title: '更新计划', path: '/info/todo' },
             ]
         },
         sidebarDepth: 2, // 最大的深度为 2
@@ -55,7 +55,7 @@ module.exports = {
                     { text: '首页', link: '/' },
                     { text: '制作游戏', link: '/guide/' },
                     { text: '编写扩展', link: '/extend/' },
-                    { text: '开发日志', link: '/info/' },
+                    { text: '引擎信息', link: '/info/' },
                     { text: 'Github', link: 'https://github.com/ahzvenol/StarNight-Engine' },
                     // {
                     //     text: '更多',

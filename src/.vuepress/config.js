@@ -28,15 +28,13 @@ module.exports = {
         sidebar: {
             '/guide/': [
                 { title: '前言 · 关于引擎', path: '/guide/preface' },
-                { title: '基础 · 编写剧本', path: '/guide/script' },
-                { title: '基础 · 基本配置', path: '/guide/config' },
-                { title: '进阶 · 优化访问', path: '/guide/assetzip' },
-                { title: '发布我的游戏', path: '/guide/release' },
-                { title: '常见问题', path: '/guide/problem' },
+                { title: '撰写剧本', path: '/guide/scenario' },
+                { title: '配置设置', path: '/guide/config' },
+                { title: '发布游戏', path: '/guide/release' },
             ],
             '/extend/': [
-                { title: '编写命令', path: '/extend/command' },
-                { title: '编写UI', path: '/extend/ui' },
+                { title: '定制命令', path: '/extend/script' },
+                { title: '定制UI', path: '/extend/ui' },
             ],
             '/info/': [
                 { title: '开发计划', path: '/info/todo' },
@@ -53,9 +51,9 @@ module.exports = {
                 // label: '简体中文',
                 nav: [
                     { text: '首页', link: '/' },
-                    { text: '制作游戏', link: '/guide/' },
-                    { text: '编写扩展', link: '/extend/' },
-                    { text: '引擎信息', link: '/info/' },
+                    { text: '基础使用', link: '/guide/' },
+                    { text: '扩展定制', link: '/extend/' },
+                    { text: '开发信息', link: '/info/' },
                     { text: 'Github', link: 'https://github.com/ahzvenol/StarNight-Engine' },
                     // {
                     //     text: '更多',

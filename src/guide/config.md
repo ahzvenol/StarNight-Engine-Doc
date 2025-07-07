@@ -1,29 +1,55 @@
-## 配置CG鉴赏
-打开`userData`文件夹中的`config.txt`,找到cg配置项,它看起来大概像这样
+## 鉴赏
+
+在 `src/store/gallery.ts` 中配置鉴赏。
+
+`cover` 配置该组鉴赏有元素解锁时的封面。
+
+`uncover` 配置该组鉴赏没有元素解锁时的封面。
+
+`items` 包含该组鉴赏的各个元素。
+
+`url` 配置元素的资源路径，与命令中填入的资源路径不同，这里应该填写从public文件夹开始完整的资源路径。
+
+`condition` 配置元素的解锁条件，与命令中填入的资源路径保持一致即可在使用过该元素后自动解锁鉴赏。
+
+#### 参考示例
 ```js
-cg: {
-    type: "head",
-    unlockMode: "allWatched",
-    content: [
-        ['evcg01', 'a', 'b', 'c', 'c2', 'd', 'e'],
-        ['evcg02', 'a', 'b', 'c', 'c2', 'd', 'e']
+export const CG = [
+  {
+    cover: './static/初遇雪.webp',
+    uncover: './static/未解锁.webp',
+    items: [
+      {
+        url: './static/初遇雪.webp',
+        condition: '/初遇雪.webp'
+      },
+      {
+        url: './static/雪中漫步.webp',
+        condition: '/雪中漫步.webp'
+      }
     ]
-}
+  },
+  {
+    cover: './static/梦中花园.webp',
+    uncover: './static/未解锁.webp',
+    items: [
+      {
+        url: './static/梦中花园.webp',
+        condition: '/梦中花园.webp'
+      },
+      {
+        url: './static/花瓣雨.webp',
+        condition: '/花瓣雨.webp'
+      }
+    ]
+  }
+]
 ```
-`type`参数可以选择`"head"`或者`"full"`,意思是使用简写或者不使用简写<br/>
-如果选择head,示例配置第一行对应的cg是`evcg01a,evcg01b,evcg01c,evcg01c2,evcg01d,evcg01e`<br/>
-如果选择full,示例配置对应的cg是`evcg01,b,c,c2,d,e`<br/>
-`unlockMode`参数可以选择`"allWatched"`、`"oneByone"`或者`manual`,分别对应<br/>
-| 参数        | 功能         |
-| -----------|:-------------:|
-| allWatched | 这一组cg都在游戏中显示过后,解锁这组cg|
-| oneByone   | 这组cg中的某个在游戏中显示过后,解锁这个cg,以此类推|
-| manual     | 关闭自动cg解锁,你需要使用[解锁cg](#解锁cg)命令手动解锁cg|
-`content`参数对应cg图片的名称,就是你在剧本中使用过的同名图片,不需要带后缀<br/>
-`[]`中是一组cg,第一个`[]`对应UI中的第一个cg位置<br/>
-## 配置全局字体
-只需要向`userData`文件夹中放入字体文件,并在`config.txt`中找到对应配置项进行配置,示例如下
-```js
-font: Hannari.ttf
-```
-如果你向对不同的界面配置不同的字体,你需要去学习[编写UI](../extend/ui)
+
+## 默认设置
+
+在 `src/store/default.ts` 中配置默认设置。
+
+## 游戏信息
+
+可以通过全局搜索 `StarNight Engine` 并替换它来设置游戏名称。

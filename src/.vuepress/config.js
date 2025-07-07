@@ -28,8 +28,8 @@ module.exports = {
         sidebar: {
             '/guide/': [
                 { title: '前言 · 关于引擎', path: '/guide/preface' },
-                { title: '撰写剧本', path: '/guide/scenario' },
-                { title: '配置设置', path: '/guide/config' },
+                { title: '编写剧本', path: '/guide/scenario' },
+                { title: '自定义项', path: '/guide/config' },
                 { title: '发布游戏', path: '/guide/release' },
             ],
             '/extend/': [

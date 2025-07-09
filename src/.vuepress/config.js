@@ -31,8 +31,8 @@ module.exports = {
                         { title: '基础入门', path: '/guide/scenario/base' },
                         { title: '实用技巧', path: '/guide/scenario/tips' },
                         { title: '参考示例', path: '/guide/scenario/example' },
-                        { title: '代码基础', path: '/guide/scenario/code' },
-                        { title: '命令手册', path: '/guide/scenario/api' }
+                        { title: '命令手册', path: '/guide/scenario/api' },
+                        { title: '代码语法', path: '/guide/scenario/code' }
                     ]
                 },
                 { title: '自定义项', path: '/guide/config' },

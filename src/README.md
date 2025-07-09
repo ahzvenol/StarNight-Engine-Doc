@@ -1,10 +1,13 @@
 ---
 home: true
-# heroImage: /favicon.png
-heroText: 星夜引擎
-tagline: 基于Web技术的视觉小说引擎 
-actionText: 阅读文档
-actionLink: /guide/
+modules:
+  - BannerBrand
+  - MdContent
+bannerBrand:
+  title: 星夜引擎
+  description: 基于Web技术的视觉小说引擎 
+  buttons:
+    - { text: 阅读文档, link: '/guide/preface' }
 ---
 
 ## 在线体验

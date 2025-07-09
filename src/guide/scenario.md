@@ -60,15 +60,13 @@ $执行.命令() // 第1幕
 
 ### 拆分剧本
 
-在剧本中使用 `$include` 将另一个剧本“包含”到当前剧本中。
+在剧本中使用 `$include` 将指定剧本的内容嵌入。
 
 ```ts
 // scenario/index.scenario.tsx
-$执行.命令() // 第0幕
 诺瓦: '……我将踏上一段愉快的旅程。' // 第1幕
-$include('./1.scenario.tsx') // 第1幕
+$include('./example.scenario.tsx') 
 $执行.命令() // 第2幕
-'无论何时……都与你一起……' // 第3幕
 ```
 
 ```ts

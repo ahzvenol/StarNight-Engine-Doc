@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: /favicon.png
-heroText: 星夜引擎
+heroText: StarNight
 tagline: 基于Web技术的视觉小说引擎 
 actionText: 阅读文档
 actionLink: /guide/preface

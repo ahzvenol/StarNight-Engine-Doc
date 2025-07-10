@@ -1,5 +1,5 @@
 module.exports = {
-    title: '星夜引擎',
+    title: 'StarNight Engine',
     head: [['link', { rel: 'icon', href: '/favicon.png', type: 'image/png', sizes: '16x16' }]],
     port: 8888,
     locales: {

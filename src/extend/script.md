@@ -35,7 +35,7 @@ Blocking<Args>((context) => async (args) => { /* 命令具体实现 */ })
 
 -   **`Dynamic`**：定义可选阻塞或不阻塞执行队列的命令，适用于需要跟踪执行时间的操作。
 
-    通过 `yield` 提交代表执行时间的 Promise ，这个表达式不会返回 Promise 的结果。
+    通过 `yield` 提交代表操作完毕的 Promise ，这个表达式不会返回 Promise 的结果。
 
     Promise resolve 或者触发快进时，yield 之后的代码将会执行，通过在这里定义设置最终状态的代码来实现命令效果的快进。
 

@@ -9,6 +9,6 @@
         "doc": "docs"
     },
     "dependencies": {
-         "vuepress": "^1.9.7"
+        "vuepress": "^1.9.10"
     }
 }

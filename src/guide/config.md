@@ -53,3 +53,5 @@ export const CG = [
 ## 游戏信息
 
 可以通过全局搜索 `StarNight Engine` 并替换它来设置游戏名称。
+
+可以通过全局搜索 `starnight.org` 并替换它来设置游戏包名。

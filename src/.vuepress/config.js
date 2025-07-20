@@ -10,7 +10,6 @@ module.exports = {
             description: ''
         }
     },
-    dest: './docs',
     base: '/StarNight-Engine-Doc/',
     themeConfig: {
         displayAllHeaders: true,

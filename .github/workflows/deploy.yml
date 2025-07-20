@@ -10,10 +10,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Build and Deploy
-        uses: ahzvenol/vuepress-deploy@master
-        env:
+      - name: Build
+        run: npm i && npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
           ACCESS_TOKEN: ${{ github.token  }}
-          TARGET_BRANCH: doc
-          BUILD_SCRIPT: npm i && npm run build
-          BUILD_DIR: docs
+          BRANCH: gh-pages
+          FOLDER: src/.vuepress/dist

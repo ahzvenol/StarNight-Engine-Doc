@@ -275,7 +275,7 @@ export const 我的命令 = Api(cmd)
 
 ```ts
 // scenario\index.scenario.tsx
-$执行.我的命令()
+$.我的命令()
 ```
 
 ## 性能优化

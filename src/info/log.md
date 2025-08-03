@@ -153,9 +153,9 @@ function Fork<R>(fn: GameFragment<R>): StandardResolvedCommand<R> {
 
 如果在写 `yield cmd(args)` 的同时还需要写 `await cmd(args)(context)`，这很容易写错，而且 context 按幕更新，手动维护一个 context 变量是相当大的负担。
 
-在当前实现中，实际上 `await yield cmd(args)` 与 `await cmd(args)(context)` 具有相同的含义，但是 TypeScript 不能在生成器函数中表达 yield 的输入类型与输出类型之间的关系，使用 yield 就只能手动指定输出类型，这也不是一个良好的解决方案。
+在当前实现中，实际上 `await yield cmd(args)` 与 `await cmd(args)(context)` 具有相同的含义，只是 TypeScript 不能在生成器函数中表达 yield 的输入类型与输出类型之间的关系，使用 yield 就只能手动指定输出类型，使得这种解决方案也不可用。
 
-但是……如果？如果使用编译器把 yield 隐去——总之它也返回与输入类型相同的类型，这样就重新获得了良好的类型提示，顺便每条命令要写一个 yield 的重复性工作也不需要了。
+但……如果？如果使用编译器把 yield 隐去——总之它也返回与输入类型相同的类型，这样就重新获得了良好的类型提示，顺便每条命令要写一个 yield 的重复性工作也不需要了。
 
 ## 事件系统：状态机、回调注册
 

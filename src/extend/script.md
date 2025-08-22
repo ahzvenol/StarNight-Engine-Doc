@@ -43,7 +43,7 @@ Blocking<Args>((context) => async (args) => { /* 命令具体实现 */ })
 
     通过 `await` 等待 Promise 的结果，但需要确保初始化状态下没有耗时 await。
 
--   **`DynamicBlocking`**：实现方式与 `Dynamic` 一致，但是限制了只能以阻塞执行队列的方式运行。
+-   **`DynamicBlocking`**：实现方式与 `Dynamic` 一致，但是限制命令只能以阻塞执行队列的方式运行。
 
 执行队列就像这样：
 

@@ -30,21 +30,103 @@ noi`……我将踏上一段愉快的旅程。` + '/noi0001.flac'
 
 对话默认以 `$` 模式运行，可以通过在对话前添加 `$:` 或 `$$:`，指定对话的执行模式。
 
+### 文本样式
+
+对话文本实际上被作为 [HTML](./code#html) 解析。
+
+可以使用 `HTML标签` 或 `style属性` 来实现自定义的文本样式。
+
+```ts
+noi`<span style="color: red">这是一条<b>重要</b>的消息，需要你<i>特别</i>留意。</span>`
+```
+
+推荐通过辅助函数简化自定义文本样式的书写。
+
+```ts
+noi`${color`red``这是一条 ${b`重要`} 的消息，需要你 ${i`特别`} 留意。`}`
+```
+
+只需将下面的代码复制到剧本中即可使用辅助函数。
+
+<details>
+<summary>点击展开/收起代码</summary>
+
+```ts
+const build = (strings: TemplateStringsArray, values: any[]) =>
+    strings.reduce((acc, str, i) => acc + str + (i < values.length ? values[i] : ''), '')
+
+/**
+ * 将文本显示为加粗文本。
+ */
+const b = (strings: TemplateStringsArray, ...values: any[]) => `<b>${build(strings, values)}</b>`;
+
+/**
+ * 将文本显示为斜体文本。
+ */
+const i = (strings: TemplateStringsArray, ...values: any[]) => `<i>${build(strings, values)}</i>`;
+
+/**
+ * 将文本显示为下划线文本。
+ */
+const u = (strings: TemplateStringsArray, ...values: any[]) => `<u>${build(strings, values)}</u>`;
+
+/**
+ * 将文本显示为删除线文本。
+ */
+const s = (strings: TemplateStringsArray, ...values: any[]) => `<s>${build(strings, values)}</s>`;
+
+/**
+ * 将文本显示为自定义颜色文本。
+ * @example
+ * color`red``这是一段红色文本`
+ */
+const color =
+    (strings0: TemplateStringsArray, ...values0: any[]) =>
+    (strings1: TemplateStringsArray, ...values1: any[]) =>
+        `<span style="color: ${build(strings0, values0)}">${build(strings1, values1)}</span>`;
+
+/**
+ * 将文本显示为自定义样式文本。
+ * @example
+ * style`opacity: 0;``这是一段透明文本`
+ */
+const style =
+    (strings0: TemplateStringsArray, ...values0: any[]) =>
+    (strings1: TemplateStringsArray, ...values1: any[]) =>
+        `<span style="${build(strings0, values0)}">${build(strings1, values1)}</span>`;
+
+/**
+ * 将文本显示为注音文本。
+ * @example
+ * ruby`zhù yīn``注音`
+ */
+const ruby =
+    (strings0: TemplateStringsArray, ...values0: any[]) =>
+    (strings1: TemplateStringsArray, ...values1: any[]) =>
+        `<ruby>${build(strings1, values1)}<rt>${build(strings0, values0)}</rt></ruby>`;
+```
+
+</details>
+
 ## 幕
 
 幕是剧情的基本单元，由若干条命令组成，幕中的命令执行完毕后，将等待用户点击进入下一幕。
 
 对话如果没有指定执行模式，将自动划分出新的一幕；使用 `$action` 可以手动划分出新的一幕。
 
+为了演出效果的方便，在一幕之中，没有创建对话之前，不会显示游戏的 UI 界面。
+
 在划分第 1 幕之前，称为第 0 幕，可以用于设置舞台的初始状态。
 
 ```ts
-$.命令() // 第0幕
+$.设置背景({ 资源路径: '/黑色背景.webp' }) // 第0幕
 noi`……我将踏上一段愉快的旅程。` // 第1幕
-$.命令() // 第1幕
+$.设置背景({ 资源路径: '/白色背景.webp' }) // 第1幕
 noi`……与你一同的旅程。` // 第2幕
+$.设置背景({ 资源路径: '/夜空背景.webp' }) // 第2幕
 $action // 第3幕
-$:noi`无论何时……都与你一起……` // 第3幕
+$$.转场动画("BlindH8") // 第3幕；不显示 UI
+$:noi`无论何时……都与你一起……` // 第3幕；显示 UI
 ```
 
 ## 剧本
@@ -65,14 +147,15 @@ $:noi`无论何时……都与你一起……` // 第3幕
 
 ```ts
 // scenario/index.scenario.tsx
+$.设置背景({ 资源路径: '/黑色背景.webp' }) // 第0幕
 noi`……我将踏上一段愉快的旅程。` // 第1幕
 $include('./example.scenario.tsx')
-$.命令() // 第2幕
+$.设置背景({ 资源路径: '/夜空背景.webp' }) // 第2幕
 ```
 
 ```ts
 // scenario/example.scenario.tsx
-$.命令() // 第1幕
+$.设置背景({ 资源路径: '/白色背景.webp' }) // 第1幕
 noi`……与你一同的旅程。`  // 第2幕
 ```
 

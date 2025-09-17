@@ -83,7 +83,7 @@ async function runGenerator<TRetrun>(
 
 可以进一步发现，将设置命令到最终状态的代码置于统计命令执行时间的 yield 之后是可行的。
 
-当命令正常执行到完毕之后，这段代码对命令的执行没有影响，当触发快进时，这段代码就起到了设置命令到最终状态的作用。
+当命令正常执行完毕时，这段代码对命令的执行没有影响，当触发快进时，这段代码就起到了设置命令到最终状态的作用。
 
 <details>
 <summary>点击展开/收起代码</summary>
@@ -193,7 +193,6 @@ async function ActLoop(this: StarNightInstance) {
         if (await PromiseX.isSettled(onGameStop)) return
     }
 }
-
 ```
 
 </details>

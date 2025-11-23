@@ -10,14 +10,14 @@ module.exports = {
             description: ''
         }
     },
-    base: '/StarNight-Engine-Doc/',
+    // base: '/StarNight-Engine-Doc/',
     themeConfig: {
         displayAllHeaders: true,
         nav: [
             { text: '首页', link: '/' },
             { text: '基础使用', link: '/guide/preface' },
             { text: '扩展定制', link: '/extend/script' },
-            { text: '开发信息', link: '/info/todo' },
+            { text: '开发日志', link: '/info/todo' },
             { text: 'Github', link: 'https://github.com/ahzvenol/StarNight-Engine' }
         ],
         sidebar: {
@@ -31,7 +31,7 @@ module.exports = {
                         { title: '实用技巧', path: '/guide/scenario/tips' },
                         { title: '参考示例', path: '/guide/scenario/example' },
                         { title: '命令手册', path: '/guide/scenario/api' },
-                        { title: '代码语法', path: '/guide/scenario/code' }
+                        { title: 'JavaScript 基础', path: '/guide/scenario/code' }
                     ]
                 },
                 { title: '自定义项', path: '/guide/config' },
@@ -44,7 +44,7 @@ module.exports = {
             ],
             '/info/': [
                 { title: '开发计划', path: '/info/todo' },
-                { title: '开发日志', path: '/info/log' }
+                { title: '开发经验', path: '/info/log' }
             ]
         }
     }

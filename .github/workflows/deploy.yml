@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Build
         run: npm i && npm run build
+      - name: Add CNAME
+        run: echo "edoc.cusky.tk" > src/.vuepress/dist/CNAME
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
